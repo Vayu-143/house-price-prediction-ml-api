@@ -1,0 +1,11 @@
+area,bedrooms,bathrooms,age,location,price
+1200,2,2,5,Bangalore,5000000
+1500,3,2,3,Bangalore,6500000
+1800,3,3,2,Mumbai,9000000
+2200,4,3,1,Mumbai,12000000
+2500,4,4,0,Delhi,11000000
+900,1,1,10,Delhi,3000000
+1100,2,1,8,Chennai,4000000
+1600,3,2,4,Chennai,7000000
+2000,3,3,3,Bangalore,8500000
+3000,5,4,1,Mumbai,15000000
