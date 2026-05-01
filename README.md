@@ -1,4 +1,4 @@
-# 🏠 House Price Prediction (ML + API + UI)
+# 🏠 House Price Predictor
 
 ## 🚀 Live Demo
 
@@ -12,22 +12,23 @@
 
 ## 📌 Project Overview
 
-This project is an end-to-end Machine Learning application that predicts house prices based on user inputs such as area, number of bedrooms, bathrooms, age of property, and location.
+This is an end-to-end Machine Learning project that predicts house prices based on user inputs like area, number of bedrooms, bathrooms, property age, and location.
 
-It includes:
+The project demonstrates full ML workflow including:
 
-* Machine Learning model for prediction
-* Flask API (for backend integration)
-* Streamlit web interface (for user interaction)
-* Deployment on Streamlit Cloud for real-time usage
+* Data preprocessing
+* Model training
+* Prediction system
+* Web UI using Streamlit
+* Deployment on cloud
 
 ---
 
 ## 🧠 Architecture
 
-Frontend (Streamlit) → ML Model (Scikit-learn Pipeline)
+**Streamlit UI → ML Pipeline (Scikit-learn)**
 
-*(Flask API also implemented for backend architecture understanding)*
+*(Flask API also implemented for backend understanding but not used in deployment)*
 
 ---
 
@@ -36,19 +37,19 @@ Frontend (Streamlit) → ML Model (Scikit-learn Pipeline)
 * Python
 * Pandas, NumPy
 * Scikit-learn
-* Flask
 * Streamlit
+* Flask (for API)
 * Joblib
 
 ---
 
 ## 🔧 Features
 
-* Predict house prices in real-time
-* Interactive UI with sliders and dropdowns
-* Clean and responsive design
-* End-to-end ML pipeline (preprocessing + model)
-* Deployment-ready structure
+* Real-time house price prediction
+* Clean and interactive UI
+* End-to-end ML pipeline
+* Deployment-ready project structure
+* Beginner-friendly code
 
 ---
 
@@ -95,7 +96,7 @@ pip install -r requirements.txt
 python -m src.train_model
 ```
 
-### 4. Run Streamlit App
+### 4. Run App
 
 ```bash
 streamlit run app.py
@@ -103,47 +104,21 @@ streamlit run app.py
 
 ---
 
-## 📁 Project Structure
-
-```bash
-house-price-prediction-ml-api/
-│
-├── api/                # Flask API (backend)
-│   ├── __init__.py
-│   └── app.py
-│
-├── data/               # Dataset
-│   └── housing.csv
-│
-├── images/             # Screenshots & graphs
-│   ├── heatmap.png
-│   ├── pairplot.png
-│   └── prediction.png
-│
-├── models/             # Saved ML model
-│   └── pipeline.pkl
-│
-├── src/                # Core ML logic
-│   ├── __init__.py
-│   ├── data_preprocessing.py
-│   ├── predict.py
-│   └── train_model.py
-│
-├── app.py              # Streamlit frontend
-├── requirements.txt
-├── README.md
-└── .gitignore
-```
-
----
-
 ## 📸 Screenshots
 
-### 🔹 App Interface
+### 🔹 App UI
 
-![App UI](images/prediction.png)
+![App UI](images/app_ui.png)
 
-### 🔹 Data Visualization (Heatmap)
+### 🔹 Prediction Result
+
+![Prediction Result](images/prediction_result.png)
+
+### 🔹 Prediction Example
+
+![Prediction](images/prediction.png)
+
+### 🔹 Heatmap
 
 ![Heatmap](images/heatmap.png)
 
@@ -153,7 +128,25 @@ house-price-prediction-ml-api/
 
 ---
 
-## 💼 Author
+## 📂 Project Structure
+
+```
+House-Price-Predictor/
+│
+├── api/                  # Flask API
+├── data/                 # Dataset
+├── images/               # Screenshots
+├── models/               # Trained models (.pkl)
+├── src/                  # ML pipeline code
+├── app.py                # Streamlit UI
+├── requirements.txt
+├── README.md
+└── .gitignore
+```
+
+---
+
+## 👨‍💻 Author
 
 **Vayunandan Mishra**
 
@@ -161,22 +154,21 @@ house-price-prediction-ml-api/
 
 ## 🎯 Key Learnings
 
-* Built an end-to-end ML system
-* Implemented model deployment workflow
-* Created REST API using Flask
-* Developed interactive frontend using Streamlit
-* Debugged real-world integration issues
-* Deployed ML application on cloud
+* Built complete ML pipeline
+* Learned deployment using Streamlit Cloud
+* Integrated frontend with ML model
+* Created API using Flask
+* Debugged real-world errors
 
 ---
 
 ## 📌 Future Improvements
 
 * Use real-world dataset (Kaggle)
-* Add more features (location encoding, amenities)
+* Add more features & feature engineering
 * Improve model accuracy (XGBoost, tuning)
-* Deploy full architecture (API + UI separately)
-* Add authentication & user history
+* Deploy API + UI separately
+* Add authentication
 
 ---
 
