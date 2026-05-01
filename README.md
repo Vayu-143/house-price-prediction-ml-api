@@ -108,7 +108,7 @@ streamlit run app.py
 
 ### 🔹 App UI
 
-![App UI](images/app_ui.png)
+![App UI](images/app.ui.png)
 
 ### 🔹 Prediction Result
 
