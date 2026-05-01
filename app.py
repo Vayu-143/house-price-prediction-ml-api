@@ -5,7 +5,7 @@ from src.predict import predict_price
 st.set_page_config(page_title="House Price Predictor", page_icon="🏠")
 
 # Title
-st.title("🏠 House Price Predictor (Deployed Version)")
+st.title("🏠 House Price Predictor")
 
 # Inputs
 area = st.number_input("Area (sq ft)", min_value=500, max_value=5000, value=1200)
