@@ -1,29 +1,33 @@
 import streamlit as st
-import requests
+from src.predict import predict_price
 
-st.title("🏠 House Price Predictor (API Version)")
+# Page config
+st.set_page_config(page_title="House Price Predictor", page_icon="🏠")
 
-area = st.number_input("Area", 500, 5000)
-bedrooms = st.slider("Bedrooms", 1, 5)
-bathrooms = st.slider("Bathrooms", 1, 4)
-age = st.slider("Age", 0, 30)
-location = st.selectbox("Location", ["Bangalore", "Mumbai", "Delhi", "Chennai"])
+# Title
+st.title("🏠 House Price Predictor (Deployed Version)")
 
+# Inputs
+area = st.number_input("Area (sq ft)", min_value=500, max_value=5000, value=1200)
+
+bedrooms = st.slider("Bedrooms", 1, 5, 2)
+
+bathrooms = st.slider("Bathrooms", 1, 4, 2)
+
+age = st.slider("Age of Property", 0, 30, 5)
+
+location = st.selectbox(
+    "Location",
+    ["Bangalore", "Mumbai", "Delhi", "Chennai"]
+)
+
+# Predict button
 if st.button("Predict"):
-    url = "http://127.0.0.1:5000/predict"
+    try:
+        price = predict_price(area, bedrooms, bathrooms, age, location)
 
-    data = {
-        "area": area,
-        "bedrooms": bedrooms,
-        "bathrooms": bathrooms,
-        "age": age,
-        "location": location
-    }
+        st.success(f"Estimated Price: ₹ {int(price):,}")
 
-    response = requests.post(url, json=data)
-
-    if response.status_code == 200:
-        price = response.json()["predicted_price"]
-        st.success(f"Estimated Price: ₹ {price:,}")
-    else:
-        st.error("Error connecting to API")
+    except Exception as e:
+        st.error("Error making prediction")
+        st.write(e)
